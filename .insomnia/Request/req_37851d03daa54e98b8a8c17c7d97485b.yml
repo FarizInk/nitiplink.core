@@ -1,0 +1,38 @@
+_id: req_37851d03daa54e98b8a8c17c7d97485b
+type: Request
+parentId: fld_b5339dfe4fc5444ebc4e6e7f9079db4b
+modified: 1645632744666
+created: 1645627414063
+url: "{{ _.base_url }}/api/login"
+name: Login
+description: ""
+method: POST
+body:
+  mimeType: application/x-www-form-urlencoded
+  params:
+    - id: pair_05cb46b7ed334667b056905252c8103b
+      name: credential
+      value: farizink
+      description: ""
+    - id: pair_4fbdbcce4a6c4f5a9dde038ba57c5ccd
+      name: password
+      value: farizink
+      description: ""
+parameters: []
+headers:
+  - id: pair_fd6be6a1248e4a0cbcb998124ef19d1f
+    name: Accept
+    value: application/json
+    description: ""
+  - name: Content-Type
+    value: application/x-www-form-urlencoded
+    id: pair_fff893c742fa4346b4b1cdb8f9766191
+authentication: {}
+metaSortKey: -1645627414063
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

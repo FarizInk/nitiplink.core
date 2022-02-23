@@ -1,0 +1,24 @@
+_id: req_93a7a7d5b2d44449bba9ec80de94fb9a
+type: Request
+parentId: fld_b5339dfe4fc5444ebc4e6e7f9079db4b
+modified: 1645632863359
+created: 1645632770966
+url: "{{ _.base_url }}/api/user"
+name: check user
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{% response 'body', 'req_37851d03daa54e98b8a8c17c7d97485b',
+    'b64::JC5tZXRhLnRva2Vu::46b', 'never', 60 %}"
+metaSortKey: -1645632770966
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
