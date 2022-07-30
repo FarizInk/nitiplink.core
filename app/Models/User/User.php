@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\User;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Veelasky\LaravelHashId\Eloquent\HashableId;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HashableId;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +21,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'username',
-        'photo',
         'email',
         'password',
     ];
@@ -31,6 +31,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'id',
         'password',
         'remember_token',
     ];
@@ -43,4 +44,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $appends = ['hash'];
+
+    public function meta(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(UserMeta::class, 'user_id');
+    }
 }

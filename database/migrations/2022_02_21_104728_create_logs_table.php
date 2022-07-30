@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('group_id')->nullable();
-            $table->unsignedBigInteger('caetgory_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('link_id')->nullable();
             $table->text('messages');
             $table->string('type');

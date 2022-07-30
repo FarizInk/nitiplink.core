@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('groupname')->unique();
-            $table->string('description')->nullable();
-            $table->string('photo')->nullable();
-            $table->unsignedBigInteger('created_by_id');
             $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('owner');
+            $table->timestamp('verified_at')->nullable();
+            $table->string('type')->default('basic');
             $table->timestamps();
+            $table->softDeletes();
 
-            $table->foreign('created_by_id')->references('id')->on('users');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('owner')->references('id')->on('users');
         });
     }
 

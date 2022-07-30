@@ -9,8 +9,12 @@
         "fruitcake/laravel-cors": "^2.0.5",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.0",
+        "laravel/octane": "^1.2",
         "laravel/sanctum": "^2.14",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "lorisleiva/laravel-actions": "^2.4",
+        "spiral/roadrunner": "^2.8.2",
+        "veelasky/laravel-hashid": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

@@ -15,17 +15,17 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('group_id');
+            $table->unsignedBigInteger('created_by');
             $table->string('path');
             $table->string('name');
-            $table->boolean('public');
+            $table->boolean('is_public')->default(true);
+            $table->integer('order')->default(0);
 
-            $table->unsignedBigInteger('categoryable_id');
-            $table->string('categoryable_type');
-            $table->unsignedBigInteger('created_by_id');
-            $table->string('created_by');
             $table->timestamps();
 
-            $table->foreign('created_by_id')->references('id')->on('users');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('group_id')->references('id')->on('groups');
         });
     }
 
